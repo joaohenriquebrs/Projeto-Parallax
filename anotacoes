@@ -1,0 +1,189 @@
+background-size: cover;
+serve para o background cobrir a parte em branco quando reduz o tamanho da imagem, com ctrl -
+
+background-attachment: fixed;
+serve para a imagem ficar fixa e não acompanhar a rolagem da pagina, o scroll
+
+
+
+se quiser utilizar uma posição absoluta dos itens que estao dentro de um "elemento" pai
+voce deve utilizar o position: relative dentro do elemento pai e o position: absolut dentro do elemento filho
+ex nas caixas para posicionar o conteudo
+
+
+
+/****Fontes****/
+para customizar a fonte, baixa no site dafonte e depois converte pra woff, Web Open Font Format
+converte no site transfonter.org
+
+so colocar a fonte no font-family, dentro do @font-face ex:
+
+isso no css
+@font-face {
+    font-family: "nome_da_fonte";
+    src: url("local_que/esta_a_fonte");
+}
+
+para colocar a fonte em todas as palavras da pagina so fazer:
+
+html {
+    font-family: "nome_da_fonte";
+}
+/****Fontes****/
+
+
+
+Normalize: Normalize CSS corrige alguns bugs que existem nas estilizações padrões dos navegadores
+link para baixar: https://necolas.github.io/normalize.css/
+para colocar o normalize cria um arquivo tipo o css e coloca na pagina html o caminho do arquivo
+
+
+
+box-sizing: border-box;
+tira o acrescimo da largura ou altura do padding
+
+border-radius: x;
+serve para arredondar as bordas
+
+cor pode se definir com rgb(x, y, z)
+e usando rgba(x, y, z, h);
+define-se tambem a transparencia, h no caso, vai de 0 ate 1
+
+
+background: linear-gradient(red, green);
+faz com que o background comece no vermelho e acabe no verde, fazendo tipo um degradê
+
+background: linear-gradient(to left, red, green);
+sai da direita pra direita
+
+tambem pode ser feito pelos graus
+background: linear-gradient(xdeg, red, green);
+x o numero de graus
+
+pode colocar varias cores, n apenas duas
+
+
+background: radial-gradient(red, green, yellow);
+mesma ideia so que vem fazendo em circulo, o centro começa vermelho depois fica verde e por fim amarelo
+
+
+text-shadow: Zpx Ypx color;
+faz o texto ter uma sombra em baixo, funciona como um background, usa-se no h1 por exemplo
+Z é esquerda-direita e Y cima-baixo
+
+text-shadow: Zpx Ypx Xpx rgba(x, y, z, h);
+X é o nivel de borrado
+x, y, z, h são cores
+ainda tem como botar outro px dps do Xpx e antes da color, que sera o espalhamento da sombra, aumentando o tamanho
+
+box-shadow: Zpx Ypx color;
+a caixa terá uma sombra
+
+
+
+link para olhar animações: https://www.w3schools.com/css/css3_animations.asp
+para usar os prefixos, para usar nos navegadores, usa o prefixo depois do @, ex: @-webkit-keyframes animacoes {}
+
+
+
+animation-iteration-count: x;
+qntd de vezes que acontece a animação
+
+animation-direction: alternate;
+para voltar pelo processo que veio
+
+animation-direction: reverse;
+faz a animação reversa
+
+animation: name duration delay count direction;
+para fazer tudo em uma unica linha
+
+
+
+para movimentar a caixa coloca ela como posição relativa e depois mexe no from e to, colocando top e left
+
+
+
+transition: width 3s;
+propriedade que faz a transicao de uma forma para outra, como por ex uma caixa que esta em 300px de width, qnd tem o hover, ela aumenta pra 400px por meio de uma transição, em 3 segundos
+
+transition: width 3s, background 3s;
+o background tambem demorara 3 segundos para mudar
+
+transition: all 3s;
+assim todas as propriedades terao 3s de transição
+
+
+
+tag <header></header>
+substitui uma div cabecalho por exemplo, e fica melhor para leitura do site so em html, para os leitores de tela
+
+tag <nav></nav>
+substitui uma div navegacao
+
+tag <footer></footer>
+substitui uma div rodape
+
+tag <article></article>
+substitui uma div postagem, como informações sobre uma empresa
+e dentro do article da para criar section
+
+tag <time></time>
+substitui uma div data
+
+tag <aside></aside>
+serve para substituir uma div area lateral por exemplo
+
+
+https://cdnjs.com/libraries/html5shiv entra no site e copia o link e coloca no html, no head, dentro de <script src="link"></script>
+ou faz a importação criando um arquivo e colocando o codigo no arquivo, depois fznd o <script src="arquivo.js"></script> no head
+Serve para poder rodar as novas tags em navegadores antigos, gerar uma compatibilidade
+
+
+na tag <input> colocar o atributo required no final, pois assim não vai ter como submeter o campo em branco
+ex: <input type="text" id="nome" required>
+
+na tag <input> pode-se colocar autofocus, serve para marcar o campo desejado, que queira que o usuario preencha primeiro
+
+<input type="number" id="numero" min="5" max="10">
+dessa forma o numero que sera escolhido nesse input tem que ser entre 5 e 10, se usar o atributo step="x", pula de x em x casas, nao mais de 1 em 1
+
+
+
+aula 93 sobre FlexBox!!!
+flex-direction: ;
+flex-wrap: ;
+justify-content: ;
+align-itens: ;
+
+
+para mudar a ordem de blocos "iguais", colocar order: 1, order 2... para todos os blocos, se quiser que o ultimo bloco va para primeiro lugar, so colocar order: 1 no ultimo bloco
+
+parte bem explicativa na aula 94, minuto 2:30
+
+flex-grow: x; Define a proporção de espaço ocupado pelo item
+quanto maior o x, maior o espaço
+
+flex-shrink: x; Define a capacidade de redução de tamanho do item
+quanto maior o x, menor o espaço
+
+flex-basis: x; Indica o tamanho inicial do flex antes da distribuição do espaço restante
+
+
+
+utilizar o site autoprefixer.github.io para colocar os prefixos automaticamente, exemplo na aula 95 minuto 8:30
+
+
+
+
+no css para chamar um id que esta em uma section, por exemplo, <section id="visita"> usa-se:
+section#visita {}
+section e o id juntos, pois o section esta no mesmo bloco que o id, se chamasse separado como
+section #visita {}
+o id teria que esta dentro de section como
+<section>
+    <div id="visita">
+    </div>
+</section>
+
+
